@@ -17,7 +17,6 @@ WORKDIR /app
 COPY --from=builder /usr /usr
 COPY --from=builder /app /app
 COPY entrypoint.sh /entrypoint.sh
-RUN chmod +x /entrypoint.sh
 # Expose port 8000 for FastAPI to be accessible
 EXPOSE 8000
 # Entrypoint
