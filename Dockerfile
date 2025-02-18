@@ -7,9 +7,8 @@ RUN pip install --upgrade pip && pip install poetry
 # Copy files into the builder stage
 COPY pyproject.toml poetry.lock ./
 # Build the application using poetry
-RUN poetry config virtualenvs.create false \
-  && poetry install --no-root --no-interaction --no-ansi
-
+RUN poetry config virtualenvs.create false && poetry install --no-root --no-interaction --no-ansi
+COPY . /app/
 
 # Start second stage
 FROM python:3.11-buster AS app
