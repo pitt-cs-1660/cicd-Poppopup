@@ -74,13 +74,12 @@ jobs:
         id: auth
         name: Authenticate to GCP
         with:
-          project_id: "ccid-451821" # update with your project ID
-          workload_identity_provider: "projects/664958294782/locations/global/workloadIdentityPools/github/providers/my-repo" # update with your Workload Identity Pool
-          service_account: "niam-service-account@ccid-451821.iam.gserviceaccount.com"
+          project_id: "new-cicd-451902" # update with your project ID
+          workload_identity_provider: "projects/774730231317/locations/global/workloadIdentityPools/github/providers/my-repo" # update with your Workload Identity Pool
 
       # configure/login with docker
       - name: gcloud Configure Docker
-        run: gcloud auth configure-docker us-east4-docker.pkg.dev
+        run: gcloud auth configure-docker us-east1-docker.pkg.dev
 
       # setup docker buildx
       - name: Setup docker buildx
@@ -95,5 +94,5 @@ jobs:
           context: ./
           file: ./Dockerfile
           push: true
-          tags: us-east4-docker.pkg.dev/ccid-451821/cicd-poppopup/app:v1
+          tags: us-east1-docker.pkg.dev/new-cicd-451902/artifact-registry-repo/app:v1
           
