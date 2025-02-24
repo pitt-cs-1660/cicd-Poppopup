@@ -74,8 +74,8 @@ jobs:
         id: auth
         name: Authenticate to GCP
         with:
-          project_id: 'ccid-451821' # update with your project ID
-          workload_identity_provider: 'projects/664958294782/locations/global/workloadIdentityPools/github/providers/my-repo' # update with your Workload Identity Pool
+          project_id: "ccid-451821" # update with your project ID
+          workload_identity_provider: "projects/664958294782/locations/global/workloadIdentityPools/github/providers/my-repo" # update with your Workload Identity Pool
           service_account: "niam-service-account@ccid-451821.iam.gserviceaccount.com"
 
       # configure/login with docker
