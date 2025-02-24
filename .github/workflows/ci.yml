@@ -94,5 +94,5 @@ jobs:
           context: ./
           file: ./Dockerfile
           push: true
-          tags: us-east1-docker.pkg.dev/new-cicd-451902/artifact-registry-repo/app:v1
+          tags: us-east1-docker.pkg.dev/new-cicd-451902/artifact-registry-repo/fastapi-server:v1
           
