@@ -95,3 +95,4 @@ jobs:
           file: ./Dockerfile
           push: true
           tags: us-east4-docker.pkg.dev/ccid-451821/cicd-poppopup/app:v1
+          
