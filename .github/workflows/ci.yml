@@ -70,28 +70,28 @@ jobs:
       - uses: actions/checkout@v4
 
       # authenticate with GCP with workload identity provider
-      - uses: 'google-github-actions/auth@v2'
-        id: auth
-        name: Authenticate to GCP
-        with:
-          project_id: 'ccid-451821' # update with your project ID
-          workload_identity_provider: 'projects/664958294782/locations/global/workloadIdentityPools/github/providers/my-repo' # update with your Workload Identity Pool
+#      - uses: 'google-github-actions/auth@v2'
+ #       id: auth
+  #      name: Authenticate to GCP
+   #     with:
+    #      project_id: 'ccid-451821' # update with your project ID
+     #     workload_identity_provider: 'projects/664958294782/locations/global/workloadIdentityPools/github/providers/my-repo' # update with your Workload Identity Pool
 
       # configure/login with docker
-      - name: gcloud Configure Docker
-        run: gcloud auth configure-docker us-east4-docker.pkg.dev
+#      - name: gcloud Configure Docker
+ #       run: gcloud auth configure-docker us-east4-docker.pkg.dev
 
       # setup docker buildx
-      - name: Setup docker buildx
-        uses: docker/setup-buildx-action@v3
-        with:
-          platforms: linux/amd64,linux/arm64
+  #    - name: Setup docker buildx
+   #     uses: docker/setup-buildx-action@v3
+    #    with:
+     #     platforms: linux/amd64,linux/arm64
 
       # build and push the image
-      - name: Build and Push
-        uses: docker/build-push-action@v6
-        with:
-          context: ./
-          file: ./Dockerfile
-          push: true
-          tags: us-east4-docker.pkg.dev/ccid-451821/cicd-poppopup/app:v1
+#      - name: Build and Push
+ #       uses: docker/build-push-action@v6
+  #      with:
+   #       context: ./
+    #      file: ./Dockerfile
+     #     push: true
+      #    tags: us-east4-docker.pkg.dev/ccid-451821/cicd-poppopup/app:v1
