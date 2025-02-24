@@ -74,7 +74,7 @@ jobs:
         id: auth
         name: Authenticate to GCP
         with:
-          project_id: 'cicd-poppopup' # update with your project ID
+          project_id: 'ccid-451821' # update with your project ID
           workload_identity_provider: 'projects/664958294782/locations/global/workloadIdentityPools/github/providers/my-repo' # update with your Workload Identity Pool
 
       # configure/login with docker
